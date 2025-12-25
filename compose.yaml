@@ -8,6 +8,12 @@ services:
       - 8000:8000
     depends_on:
       - db
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /code
+
 
   db:
     image: postgres:15
